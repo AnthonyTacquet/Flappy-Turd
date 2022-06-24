@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class HighScore {
     public static int read() throws FileNotFoundException {
         int highest = 0;
-        FileReader fileReader = new FileReader("src/main/resources/Files/scores.txt");
+        FileReader fileReader = new FileReader("src/resources/Files/scores.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         Stream<String> lines = bufferedReader.lines();
 
