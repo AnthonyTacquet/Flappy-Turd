@@ -287,7 +287,6 @@ public class GameActivity extends AppCompatActivity{
                     if (!THEME.isPlaying()){
                         THEME.start();
                     }
-                    System.out.println("test");
                 }
                 THEME.stop();
             });

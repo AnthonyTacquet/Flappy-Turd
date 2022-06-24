@@ -3,12 +3,14 @@ package com.antwaan.flappyturd;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelStoreOwner;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import data.ReadWrite;
 import logic.Sound;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -21,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         GameButton = (Button) findViewById(R.id.GameButton);
-
         GameButton.setOnClickListener(this);
     }
 
