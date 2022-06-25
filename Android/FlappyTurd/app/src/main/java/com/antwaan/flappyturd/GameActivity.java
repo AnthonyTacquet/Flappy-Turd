@@ -60,7 +60,9 @@ public class GameActivity extends AppCompatActivity{
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);   // this super call is important !!!
-        jump = true;
+        if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+            jump = true;
+        }
         return true;
     }
 
@@ -121,7 +123,7 @@ public class GameActivity extends AppCompatActivity{
             if (jumpThread.isAlive())
                 jumpThread.interrupt();
             jumpThread = new Thread(() -> {
-                Timer timer = new Timer(2);
+                Timer timer = new Timer(5);
                 timer.startTimer();
                 int distance = 1;
                 for (int i = 0; i < 30; i++) {
@@ -147,7 +149,7 @@ public class GameActivity extends AppCompatActivity{
 
         public void falling(){
             fallingThread = new Thread(() -> {
-                Timer fallingTimer = new Timer(2);
+                Timer fallingTimer = new Timer(5);
                 fallingTimer.startTimer();
                 int i = 0;
                 int distance = 0;
@@ -202,7 +204,7 @@ public class GameActivity extends AppCompatActivity{
                 int width = displayMetrics.widthPixels;
                 while (!gameover){
                     for (int i = 0; i < pipes.size(); i++) {
-                        if (pipes.get(i).getTube1().getX() < -pipes.get(i).getTube1().getWidth()){
+                        if (pipes.get(i).getTube1().getX() < - (pipes.get(i).getTube1().getWidth() + 100) ){
                             pipes.remove(i);
                         }
                     }
