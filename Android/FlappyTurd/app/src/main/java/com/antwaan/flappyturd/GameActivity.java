@@ -126,7 +126,7 @@ public class GameActivity extends AppCompatActivity{
                 Timer timer = new Timer(5);
                 timer.startTimer();
                 int distance = 1;
-                for (int i = 0; i < 30; i++) {
+                for (int i = 0; i < 60; i++) {
                     switch (i){
                         case 5: distance = 2; break;
                         case 10: distance = 4; break;
