@@ -128,11 +128,11 @@ public class GameActivity extends AppCompatActivity{
                 int distance = 1;
                 for (int i = 0; i < 60; i++) {
                     switch (i){
-                        case 5: distance = 2; break;
-                        case 10: distance = 4; break;
-                        case 15: distance = 6; break;
+                        case 5: distance = 10; break;
                         case 20: distance = 8; break;
-                        case 25: distance = 10; break;
+                        case 35: distance = 6; break;
+                        case 40: distance = 4; break;
+                        case 55: distance = 2; break;
 
                     }
                     if (!timer.getThread().isAlive()) {
@@ -182,9 +182,9 @@ public class GameActivity extends AppCompatActivity{
             pipesMoveThread = new Thread(() -> {
                 while (!gameover){
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(10);
                         for (int i = 0; i < pipes.size(); i++){
-                            pipes.get(i).moveX(10);
+                            pipes.get(i).moveX(2);
                             checkScore(pipes.get(i));
                         }
                     } catch (InterruptedException e) {
